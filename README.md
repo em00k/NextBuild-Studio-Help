@@ -11,11 +11,11 @@ Run the menu script:
 
 Then select from the available options: 
 - 1) Keywords Editor (jsonfiles/keywords.json)
-    This is what will appear in the F1 help system. 
+    - This is what will appear in the F1 help system. 
 - 2) Constants Editor (jsonfiles/nextbuild_constants.json)
-    These are what appear when you hover over a keyword in the editor.
+    - These are what appear when you hover over a keyword in the editor.
 - 3) Snippets Editor (jsonfiles/nextbuild_snippets.json)
-    These expand when you start typing a keyword in the editor.
+    - These expand when you start typing a keyword in the editor.
 - 4) Copy to Live (copy_to_live.sh)
 
 
