@@ -1,6 +1,6 @@
-## NextBuild Editor Menu
+## NextBuild-Studio Help Editors
 
-A menu-driven launcher for NextBuild editors and other tools.
+A menu-driven launcher for NextBuild-Studio Helper Editors.
 
 ### Usage
 
