@@ -21,12 +21,15 @@ Then select from the available options:
 The copy to live script copies the jsonfiles to the live directory. This is used to test the editors in the live environment in a Virtual Machine.
 
 The jsonfiles folder contains all three json files that are used by the NextBuild Studio extension.
-- jsonfiles/keywords.json       
+- jsonfiles/keywords.json
     - This file contains the keywords that are used by the NextBuild Studio extension.
+    - ![Keywords Editor](docs/keywords.png)
 - jsonfiles/nextbuild_constants.json
     - This file contains the constants that are used by the NextBuild Studio extension.
+    - ![Constants Editor](docs/constants.png)
 - jsonfiles/nextbuild_snippets.json
     - This file contains the snippets that are used by the NextBuild Studio extension.
+    - ![Snippets Editor](docs/snippets.png)
 
 The copy to live script copies these files to the live directory.
 
