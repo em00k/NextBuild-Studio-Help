@@ -713,5 +713,21 @@
   "ULA_PALETTE_P2": {
     "value": 64,
     "description": "Constant for ULA_PALETTE_P1 = %01000000"
+  },
+  "CTC0": {
+    "value": 6203,
+    "description": "CTC Channel 0 $183B"
+  },
+  "CTC1": {
+    "value": 6459,
+    "description": "CTC Channel 1 $193B"
+  },
+  "CTC2": {
+    "value": 6715,
+    "description": "CTC Channel 2 $1A3B"
+  },
+  "CTC3": {
+    "value": 6971,
+    "description": "CTC Channel 3 $1B3B"
   }
 }
