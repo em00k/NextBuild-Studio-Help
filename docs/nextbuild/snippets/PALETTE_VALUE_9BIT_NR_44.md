@@ -1,0 +1,9 @@
+---
+name: PALETTE_VALUE_9BIT_NR_44
+prefix: PALETTE_VALUE_9BIT_NR_44
+description: PALETTE_VALUE_9BIT_NR_44      equ $44
+---
+
+```
+PALETTE_VALUE_9BIT_NR_44
+```

@@ -1,0 +1,9 @@
+---
+name: COPPER_CONTROL_LO_NR_61
+prefix: COPPER_CONTROL_LO_NR_61
+description: COPPER_CONTROL_LO_NR_61      equ $61
+---
+
+```
+COPPER_CONTROL_LO_NR_61
+```

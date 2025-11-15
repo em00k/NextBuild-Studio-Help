@@ -1,0 +1,866 @@
+{
+  "'!heap": {
+    "prefix": "'!heap",
+    "body": [
+      "'!heap={$1}"
+    ],
+    "description": "Sets the amount of RAM used for the HEAP, must be at the start of the program."
+  },
+  "AYFX & Music Interrupt": {
+    "prefix": "Template",
+    "body": [
+      "' -- Load block ",
+      "LoadSDBank(\"music.pt3\",0,0,0,${1|34:line}) \t\t\t\t' load music.pt3 into bank 34",
+      "LoadSDBank(\"vt24000.bin\",0,0,0,33) \t\t\t\t' load the music replayer into bank 33",
+      "' -- ",
+      "InitSFX(36)\t\t\t\t\t\t\t            ' init the SFX engine, sfx are in bank 36",
+      "InitMusic(${2|34},$1,0000)\t\t\t\t            ' init the music engine 33 has the player, 34 the pt3, 0000 the offset in bank 34",
+      "SetUpIM()\t\t\t\t\t\t\t            ' init the IM2 code ",
+      "EnableSFX\t\t\t\t\t\t\t            ' Enables the AYFX, use DisableSFX to top",
+      "EnableMusic \t\t\t\t\t\t            ' Enables Music, use DisableMusic to stop ",
+      "'PlaySFX(nr)                                    ' Plays SFX "
+    ],
+    "description": "This code will produce a code block for uysing Shiru's AYFX and playing PT3 files on interrupt. The interrupt is dynamically created."
+  },
+  "BBREAK - Basic breakpoint": {
+    "prefix": "BBREAK",
+    "body": [
+      "BBREAK"
+    ],
+    "description": "Sets a CSpect breakpoint, will be ignored on real hw.\n\n**For use in an basic block, for asm use **BREAK**"
+  },
+  "BREAK - ASM breakpoint": {
+    "prefix": "BREAK",
+    "body": [
+      "BREAK"
+    ],
+    "description": "Sets a CSpect breakpoint, will be ignored on real hw.\n\n**For use in an ASM block, for basic use **BBREAK**"
+  },
+  "CLS": {
+    "prefix": "CLS",
+    "body": [
+      "CLS"
+    ],
+    "description": "Clear ULA screen"
+  },
+  "CLS256(colour)": {
+    "prefix": "CLS256",
+    "body": [
+      "CLS256(${1:n})"
+    ],
+    "description": "Clear Layer 2 with n colour"
+  },
+  "ClipLayer2(x1,x2,y1,y2)": {
+    "prefix": "ClipLayer2",
+    "body": [
+      "ClipLayer2(${1:0},${2:255},${3:0},${4:255})"
+    ],
+    "description": "Sets visible clipping of Layer2"
+  },
+  "ClipSprite(x1,x2,y1,y2)": {
+    "prefix": "ClipSprite",
+    "body": [
+      "ClipSprite(${1:0},${2:255},${3:0},${4:255})"
+    ],
+    "description": "Clips the visible area for sprites"
+  },
+  "ClipTile(x1,x2,y1,y2)": {
+    "prefix": "ClipTile",
+    "body": [
+      "ClipTile(${1:0},${2:255},${3:0},${4:255})"
+    ],
+    "description": "Sets visible clipping of the HW tilemap, nb X is doubled to support 320x256"
+  },
+  "ClipULA(x1,x2,y1,y2)": {
+    "prefix": "ClipULA",
+    "body": [
+      "ClipULA(${1:0},${2:255},${3:0},${4:255})"
+    ],
+    "description": "Sets visible clipping of the ULA"
+  },
+  "Command Line": {
+    "prefix": "!cmd",
+    "body": [
+      "'!cmd=C:\\NextBuildv8\\Emu\\CSpect\\hdfmonkey.exe put /cygdrive/d/hdmfg2/img/cspect-next-2gb.img explorer.bin /"
+    ],
+    "description": "Example cmd line to run after compile"
+  },
+  "Comment Block": {
+    "prefix": "cmt",
+    "body": [
+      "'----------------------------------------------------------",
+      "' ${1:comment}",
+      "'",
+      "$2"
+    ],
+    "description": "Adds a comment block"
+  },
+  "Copy BIN": {
+    "prefix": "!bin",
+    "body": [
+      "'!bin=d:/test/file.bin"
+    ],
+    "description": "Copies the binary file to a location"
+  },
+  "Copy File": {
+    "prefix": "!copy",
+    "body": [
+      "'!copy=d:/test/file.nex"
+    ],
+    "description": "Copies the final NEX to a location"
+  },
+  "DATA a,b,c....": {
+    "prefix": "DATA",
+    "body": [
+      "DATA ${1:n}"
+    ],
+    "description": "DATA statement : eg DATA 1,2,3,4,5,\"HELLO\""
+  },
+  "Dim var AS type AT ": {
+    "prefix": "Dim",
+    "body": [
+      "dim ${1:name} as ${2|ubyte,uinteger,float,fixed,ulong,string|}"
+    ],
+    "description": "Defines a global variable of type"
+  },
+  "DisableMusic": {
+    "prefix": "DisableMusic",
+    "body": [
+      "DisableMusic"
+    ],
+    "description": "Disables Music in the interrupt initiated with SetUpIM()"
+  },
+  "DisableSFX": {
+    "prefix": "DisableSFX",
+    "body": [
+      "DisableSFX"
+    ],
+    "description": "Disables SFX in the interrupt initiated with SetUpIM()"
+  },
+  "DoTile8(X,Y,Tile)": {
+    "prefix": "DoTile8",
+    "body": [
+      "DoTile8(${1:x},${2:y},${3:tile})"
+    ],
+    "description": "Draw a 256 colour 8x8px tile at x,y on Layer2 256x192"
+  },
+  "DoTileBank16(X,Y,Tile,Bank)": {
+    "prefix": "DoTileBank16",
+    "body": [
+      "DoTileBank16(${1:x},${2:y},${3:tile},${4:bank})"
+    ],
+    "description": "Draw a 256 colour 16x16px tile from bank at x,y on Layer2 256x192.\n\nMax tile number = 256"
+  },
+  "DoTileBank8(X,Y,Tile,Bank)": {
+    "prefix": "DoTileBank8",
+    "body": [
+      "DoTileBank8(${1:x},${2:y},${3:tile},${4:bank})"
+    ],
+    "description": "Draw a 256 colour 8x8px tile from bank at x,y on Layer2 256x192.\n\nMax tile number = 256"
+  },
+  "DoTile(X,Y,Tile)": {
+    "prefix": "DoTile",
+    "body": [
+      "DoTile(${1:x},${2:y},${3:tile})"
+    ],
+    "description": "Draw a 256 colour 16x16px tile at x,y on Layer2 256x192"
+  },
+  "EnableMusic": {
+    "prefix": "EnableMusic",
+    "body": [
+      "EnableMusic"
+    ],
+    "description": "Enable Music in the interrupt initiated with SetUpIM()"
+  },
+  "EnableSFX": {
+    "prefix": "EnableSFX",
+    "body": [
+      "EnableSFX"
+    ],
+    "description": "Enables SFX in the interrupt initiated with SetUpIM()"
+  },
+  "EnableShadow()": {
+    "prefix": "EnableShadow",
+    "body": [
+      "EnableShadow()"
+    ],
+    "description": "Enables drawing to shadow L2"
+  },
+  "FDoTile16(Tile,X,Y,Bank)": {
+    "prefix": "FDoTile16",
+    "body": [
+      "FDoTile16(${1:tile},${2:x},${3:y},${4:bank})"
+    ],
+    "description": "Draw a 256 colour 16x16px tile from\nbank at x,y on Layer2 320x256. Max tile number = 256"
+  },
+  "FDoTile8(Tile,X,Y,Bank)": {
+    "prefix": "FDoTile8",
+    "body": [
+      "FDoTile8(${1:tile},${2:x},${3:y},${4:bank})"
+    ],
+    "description": "Draw a 256 colour 8x8px tile from\nbank at x,y on Layer2 320x256. Max tile number = 256"
+  },
+  "FL2Text(X,Y,String,Bank)": {
+    "prefix": "FL2Text",
+    "body": [
+      "FL2Text(${1:x},${2:y},${3:string},${4:bank})"
+    ],
+    "description": "Draw text on L2 320x256 with 8x8 font in bank"
+  },
+  "FOR Loop": {
+    "prefix": "for",
+    "body": [
+      "FOR ${1:variable} = ${2:start} TO ${3:end}${4: STEP ${5:increment}}",
+      "\t${6:REM code here}",
+      "NEXT ${1:variable}"
+    ],
+    "description": "FOR...TO...NEXT loop"
+  },
+  "FPlotL2(X,Y,String,Bank)": {
+    "prefix": "FPlotL2",
+    "body": [
+      "FPlotL2(${1:y},${2:x},${3:colour})"
+    ],
+    "description": "Plot pixel on L2 320x256 with colour"
+  },
+  "FreeBank(bank)": {
+    "prefix": "FreeBank",
+    "body": [
+      "FreeBank(${1:bank})"
+    ],
+    "description": "Free bank thank that was obtained with ReserveBank()"
+  },
+  "GetKeyScanCode()=nn": {
+    "prefix": "GetKeyScanCode",
+    "body": [
+      "GetKeyScanCode()="
+    ],
+    "description": "Returns scancode if key is press otherwise 0. You will need keys.bas include"
+  },
+  "GetReg(register)": {
+    "prefix": "GetReg",
+    "body": [
+      "GetReg(${1:reg})"
+    ],
+    "description": "byte = GetReg(register)"
+  },
+  "IF Statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "\t${2:REM code here}",
+      "end if"
+    ],
+    "description": "IF...THEN...END IF block"
+  },
+  "INTEGER": {
+    "prefix": "INTEGER",
+    "body": [
+      "INTEGER"
+    ],
+    "description": "INTEGER is signed -32767 - +32767, 2bytes"
+  },
+  "InitLayer2(SCREENMODE)": {
+    "prefix": "InitLayer2",
+    "body": [
+      "InitLayer2(MODE${1|256X192,320X256,640X256|})"
+    ],
+    "description": "Sets the Layer2 screen mode - see [InitLayer2](initlayer2.md)"
+  },
+  "InitMusic(playerbank,musicbank,address offset in bank)": {
+    "prefix": "InitMusic",
+    "body": [
+      "InitMusic(${1:player},${2:music},${3:offset})"
+    ],
+    "description": "Initialise the VortexTracker2 routine in playerbank, with a pt3 file in musicbank with optional offset"
+  },
+  "InitPalette(pallete_sel[, bank, start index, number of colours, offset in bank])": {
+    "prefix": "InitPalette",
+    "body": [
+      "InitPalette(${1|ULA_PALETTE_P1,ULA_PALETTE_P2,L2_PALETTE_P1,L2_PALETTE_P2,SPR_PALETTE_P1,SPR_PALETTE_P2,TILE_PALETTE_P1,TILE_PALETTE_P2|},${2:0},${3:0},${4:0},${5:0})"
+    ],
+    "description": "Uploads a palette to the selected palette system see [InitPalette](initpalette.md). You can this command with only the first parameter set, the rest will be set to 0 (default)."
+  },
+  "InitSFX(bank)": {
+    "prefix": "InitSFX",
+    "body": [
+      "InitSFX(${1:bank})"
+    ],
+    "description": "Initialise AYFX afb data in bank"
+  },
+  "InitSprites2(nr of sprites,address,sprite bank)": {
+    "prefix": "InitSprites2",
+    "body": [
+      "InitSprites2(${1:nr},${2:address},${3:bank})"
+    ],
+    "description": "Upload nr sprites from address, 8 or 4 bit supported from a specified bank"
+  },
+  "InitSprites(nr of sprites,address)": {
+    "prefix": "InitSprites",
+    "body": [
+      "InitSprites(${1:nr},${2:address})"
+    ],
+    "description": "Upload nr sprites from address, 8 or 4 bit supported"
+  },
+  "KEY": {
+    "prefix": "KEY",
+    "body": [
+      "KEY${1|A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,SYMBOL,SPACE,ENTER,CAPS|}"
+    ],
+    "description": "For use with GetKeyScanCode()=KEYx or MultiKey(KEYx), requires keys.bas include"
+  },
+  "L2Text(X,Y,String$,Bank)": {
+    "prefix": "L2Text",
+    "body": [
+      "L2Text(${1:x},${2:y},${3:string},${4:bank},${5:mask})"
+    ],
+    "description": "Draw string on Layer2 256x192 using 8x8 font from specified bank. Use the mask to specify a colour to mask out."
+  },
+  "LoadBMP(filename)": {
+    "prefix": "LoadBMP",
+    "body": [
+      "LoadBMP(\"${1:filename}\")"
+    ],
+    "description": "Loads a BMP to L2 256x192"
+  },
+  "LoadSDBank(...)": {
+    "prefix": "LoadSDBank",
+    "body": [
+      "LoadSDBank(\"${1:Filename}\",${2:Address},${3:Length},${4:Offset},${5:Start bank})"
+    ],
+    "description": "Loads a file into specified memory banks. Disable this when you create your final NEX by putting #Define NEX before the nextlib"
+  },
+  "LoadSD(filename,address,length,offset)": {
+    "prefix": "LoadSD",
+    "body": [
+      "LoadSD(\"${1:Filename}\",${2:Address},${3:Length},${4:Offset})"
+    ],
+    "description": "Loads a file from SD to memory, length needs to be provided"
+  },
+  "Loading Bitmap": {
+    "prefix": "!bmp",
+    "body": [
+      "'!bmp=image.bmp"
+    ],
+    "description": "Use image.bmp as a loading file for the"
+  },
+  "Module": {
+    "prefix": "!module",
+    "body": [
+      "'!module"
+    ],
+    "description": "Tells the precompile this is a module of a master NEX"
+  },
+  "MultiKey(ScanCode)=": {
+    "prefix": "MultiKeys",
+    "body": [
+      "MultiKeys(KEY${1|A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,SYMBOL,SPACE,ENTER,CAPS|})"
+    ],
+    "description": "Can be used to detect multiple key presses as once. You will need keys.bas include"
+  },
+  "NextRegA(reg,value as var)": {
+    "prefix": "NextRegA",
+    "body": [
+      "NextRegA(${1:reg},${2:value}"
+    ],
+    "description": "Sets Nextreg reg with variable"
+  },
+  "NextReg(reg,value as const)": {
+    "prefix": "NextReg",
+    "body": [
+      "NextReg(${1:reg},${2:const})"
+    ],
+    "description": "Sets Nextreg reg with constant value (ie, a direct number). If you want to use a variable for the value use NextRegA(reg,var)"
+  },
+  "No Emulator": {
+    "prefix": "!noemu",
+    "body": [
+      "'!noemu"
+    ],
+    "description": "Supress launching CSpect after compilation"
+  },
+  "No Header": {
+    "prefix": "!headerless",
+    "body": [
+      "'!headerless"
+    ],
+    "description": "Create a compilation with to ZXBC pre-amble startup code"
+  },
+  "No NEX file": {
+    "prefix": "!nonex",
+    "body": [
+      "'!nonex"
+    ],
+    "description": "Do not create a NEX file"
+  },
+  "No Stack": {
+    "prefix": "!nosp",
+    "body": [
+      "'!nosp"
+    ],
+    "description": "Do not set the stack to within the NEX address range, leave floating"
+  },
+  "No SysVars": {
+    "prefix": "!nosys",
+    "body": [
+      "'!nosys"
+    ],
+    "description": "Do not include the System Varibles in the final output"
+  },
+  "Optimisation": {
+    "prefix": "!opt",
+    "body": [
+      "'!opt=2"
+    ],
+    "description": "Default = 4, options between 2-4, with 4 taking the longest to compile"
+  },
+  "Origin address": {
+    "prefix": "!org",
+    "body": [
+      "'!org=24576"
+    ],
+    "description": "Start address of code in decimal"
+  },
+  "PalUpload(address as uinteger, colours as ubyte, offset as ubyte, bank as ubyte=0)": {
+    "prefix": "PalUpload",
+    "body": [
+      "PalUpload(${1:nr},${2:address},${3:offset},${4:bank})"
+    ],
+    "description": "Upload a palette from address, number of colours, offset and optional bank"
+  },
+  "PlotL2(x,y,colour)": {
+    "prefix": "Plot",
+    "body": [
+      "PlotL2(${1:x},${2:y},${3:colour})"
+    ],
+    "description": "Plot a pixel on Layer2 256x192 with colour"
+  },
+  "Poke Uinteger address,value": {
+    "prefix": "Poke UINTERGER",
+    "body": [
+      "poke Uinteger ${1:0},${2:0}"
+    ],
+    "description": "POKE UINT to address"
+  },
+  "Poke address,value": {
+    "prefix": "Poke",
+    "body": [
+      "Poke ${1:0},${2:0}"
+    ],
+    "description": "POKE byte to address"
+  },
+  "Print AT Y,X": {
+    "prefix": "print",
+    "body": [
+      "print"
+    ],
+    "description": "PRINT str$\n\nPrint at y,x;"
+  },
+  "Rem comment": {
+    "prefix": "Rem",
+    "body": [
+      "rem ${1:comment}"
+    ],
+    "description": "Adds a remark line"
+  },
+  "RemoveSprite(sprite id,visibility)": {
+    "prefix": "RemoveSprite",
+    "body": [
+      "RemoveSprite(${1:id},${2|FALSE,TRUE|})"
+    ],
+    "description": "Remove sprite with id, 0 = off, 1 = on"
+  },
+  "ReserveBank()": {
+    "prefix": "ReserveBank",
+    "body": [
+      "ReserveBank()"
+    ],
+    "description": "byte = ReserveBank(), returns free bank from NextZXOS"
+  },
+  "SUB Procedure": {
+    "prefix": "sub",
+    "body": [
+      "sub ${1:procedureName}(${2:parameters})",
+      "\t${3:REM code here}",
+      "end sub"
+    ],
+    "description": "SUB...END SUB procedure block"
+  },
+  "SaveSD(filename,address,length)": {
+    "prefix": "SaveSD",
+    "body": [
+      "SaveSD(\"${1:Filename}\",${2:Address},${3:Length})"
+    ],
+    "description": "Save a file from memory to SD, length needs to be provided"
+  },
+  "ScrollLayer2(x,y)": {
+    "prefix": "Scroll",
+    "body": [
+      "ScrollLayer2(${1:x},${2:y})"
+    ],
+    "description": "ScrollLayer2 by x,y pixels"
+  },
+  "SetUpIM()": {
+    "prefix": "SetUpIM",
+    "body": [
+      "SetUpIM()"
+    ],
+    "description": "Initialise and start dynamic Interrupt routine for use with InitSFX(), InitMusic(), PlaySFX(). Make sure you #DEFINE IM2 before you include the nextlib"
+  },
+  "Set HEAP": {
+    "prefix": "!heap",
+    "body": [
+      "'!heap=$2048"
+    ],
+    "description": "Sets the amount of RAM used for the HEAP"
+  },
+  "Setup Sprite Templates From File": {
+    "prefix": "Template",
+    "body": [
+      "' -- Load block ",
+      "LoadSDBank(\"${1:fname}\",0,0,0,${2:bank})",
+      "InitSprites2(63,\\$0000,${2:bank})       ' 63 nr of sprites to upload from bank ",
+      "' -- "
+    ],
+    "description": "This code loads a sprite file, pages in relevant banks and then uploads ending with putting back the default banks. This is intended ot be run in the load block of code."
+  },
+  "ShowLayer2(n)": {
+    "prefix": "ShowLayer2",
+    "body": [
+      "ShowLayer2(${1|TRUE,FALSE|})"
+    ],
+    "description": "0 disable Layer 2, 1 enable"
+  },
+  "Simple timer snippet": {
+    "prefix": "Timer",
+    "body": [
+      "dim ${1:timername} as ${2|UBYTE,UINTEGER,FLOAT,FIXED|}",
+      "if  ${1:timername} =  ${3:0}",
+      "    ' timer triggered ",
+      "     ${1:timername} = 0",
+      "else ",
+      "     ${1:timername} =  ${1:timername} - 1 ",
+      "endif"
+    ],
+    "description": "This code creates a simple timer that triggers on a set value"
+  },
+  "Specify Origin": {
+    "prefix": "!origin",
+    "body": [
+      "'!origin=source.bas"
+    ],
+    "description": "Tells the precompile to compile the origin bas file"
+  },
+  "Sub subname(...": {
+    "prefix": "sub",
+    "body": [
+      "sub ${1:subname}(${2})",
+      "\t$0",
+      "end sub"
+    ],
+    "description": "Create a sub"
+  },
+  "Template For 256x192L2": {
+    "prefix": "Template",
+    "body": [
+      "'!org=24576",
+      "' NextBuild Layer2 Template ",
+      "#define NEX ",
+      "#define IM2 ",
+      "#include <nextlib.bas>",
+      "asm ",
+      "    ; setting registers in an asm block means you can use the global equs for register names ",
+      "    ; 28mhz, black transparency,sprites on over border,256x192/320x256",
+      "    nextreg TURBO_CONTROL_NR_07,%11         ; 28 mhz ",
+      "    nextreg GLOBAL_TRANSPARENCY_NR_14,\\$0    ; black ",
+      "    nextreg SPRITE_CONTROL_NR_15,%00000011  ; %000    S L U, %11 sprites on over border",
+      "    nextreg LAYER2_CONTROL_NR_70,%00000000  ; 5-4 %00 = 256x192x8bpp, 5-4 %01 320x256x8bpp",
+      "end asm "
+    ],
+    "description": "This template sets registers and include nextlib for 320x256x8bpp"
+  },
+  "TileMap(address,offset,nrtiles,x,y,width,worldwidth)": {
+    "prefix": "TileMap",
+    "body": [
+      "TileMap(${1:address},${2:0},${3:nrtiles},${4:x},${5:y},${6:width},${6:worldwidth})"
+    ],
+    "description": "Does a software L2 256x192 tilemap. address = mapdata, offset = block to start counting from, nrtiles = how many tiles to draw, x/y = x/y position to top left corner of tilemap, width = width of tilemap on scree, worldwidth = nr of tiles x in world"
+  },
+  "UBYTE": {
+    "prefix": "BYTE",
+    "body": [
+      "UBYTE"
+    ],
+    "description": "UBYTE is signed -127 - +127, 1bytes"
+  },
+  "UINTEGER": {
+    "prefix": "UINTEGER",
+    "body": [
+      "UINTEGER"
+    ],
+    "description": "UINTEGER is unsigned 0 - 65535, 2bytes"
+  },
+  "UpdateSprite(uint x,y,id,image,attr3,attr4)": {
+    "prefix": "UpdateSprite",
+    "body": [
+      "UpdateSprite(${1:x},${2:y},${3:id},${4:image},${5:attr3},${6:attr4})"
+    ],
+    "description": "Updates the sprite with id set. Sprite attribute 3 and 4 are supported (flip, scale, rotate, anchor etc)"
+  },
+  "VAL string$": {
+    "prefix": "VAL",
+    "body": [
+      "VAL ${1:str$}"
+    ],
+    "description": "Turns string into a numerical value eg : a = VAL \"5\""
+  },
+  "WaitKey()": {
+    "prefix": "WaitKey",
+    "body": [
+      "WaitKey()"
+    ],
+    "description": "Waits for keyboard or kempston 1 to be pressed"
+  },
+  "WaitRaster(nn)": {
+    "prefix": "WaitRaster",
+    "body": [
+      "WaitRaster(${1|192,242|})             "
+    ],
+    "description": "Wait until the raster line is nn"
+  },
+  "WaitRetrace(nn)": {
+    "prefix": "WaitRetrace",
+    "body": [
+      "WaitRetrace(${1:frames})"
+    ],
+    "description": "Wait number of frames "
+  },
+  "'!asm": {
+    "prefix": "'!",
+    "body": [
+      "'!asm"
+    ],
+    "description": "Compile and output to asm, no NEX is created. No emulator is launched."
+  },
+  "'!bmp=file.bmp": {
+    "prefix": "'!",
+    "body": [
+      "'!bmp=${1:dest}"
+    ],
+    "description": "BMP to be used as a loading screen when creating a NEX"
+  },
+  "'!copy=drive:\\file.ext": {
+    "prefix": "'!",
+    "body": [
+      "'!copy=${1:dest}"
+    ],
+    "description": "Copies the NEX output to a specified location"
+  },
+  "'!heap=size": {
+    "prefix": "'!",
+    "body": [
+      "'!heap=${1:size}"
+    ],
+    "description": "Size in bytes of heap, default is 2048"
+  },
+  "'!noemu": {
+    "prefix": "'!",
+    "body": [
+      "'!noemu"
+    ],
+    "description": "Do not launch emulator after compilation"
+  },
+  "'!opt=optimisation value": {
+    "prefix": "'!",
+    "body": [
+      "'!opt=${1|0|1|2|3|4|}"
+    ],
+    "description": "Optimisation value for the compiler 0 - 4"
+  },
+  "'!org=address": {
+    "prefix": "'!",
+    "body": [
+      "'!org=${1:address}"
+    ],
+    "description": "Start address of your program, default is 32768"
+  },
+  "#define DEBUG": {
+    "prefix": "#define",
+    "body": [
+      "#define DEBUG"
+    ],
+    "description": "Halt on loading errors"
+  },
+  "#define IM2": {
+    "prefix": "#define",
+    "body": [
+      "#define IM2",
+      "$0"
+    ],
+    "description": "Required for SetUpIM2() and related music + ayfx routines"
+  },
+  "#define NEX": {
+    "prefix": "#define",
+    "body": [
+      "#define NEX"
+    ],
+    "description": "Required for finalising your NEX to disable LoadSDBank code"
+  },
+  "#include <nextlib.bas>": {
+    "prefix": "#include",
+    "body": [
+      "#include ${1|<nextlib.bas>,<keys.bas>,<memcopy.bas>,<string.bas>,<print42.bas>,<print64.bas>,<printfzx.bas>,<megalz.bas>|}",
+      "$0"
+    ],
+    "description": "Include the nextlib or other zxb lib, make sure this is after any #DEFINEs for NEX, DEBUG, IM2"
+  },
+  "border n": {
+    "prefix": "border",
+    "body": [
+      "border ${1:n}"
+    ],
+    "description": "Set BORDER n"
+  },
+  "cast(ubyte,value)": {
+    "prefix": "cast",
+    "body": [
+      "cast(ubyte,${1:0})"
+    ],
+    "description": "Cast value as ubyte"
+  },
+  "cast(uinteger,value)": {
+    "prefix": "cast",
+    "body": [
+      "cast(uinteger,${1:0})"
+    ],
+    "description": "Cast value as uinteger"
+  },
+  "do : loop until n=n": {
+    "prefix": "do",
+    "body": [
+      "do",
+      "\t$0",
+      "loop ${1|until, |}"
+    ],
+    "description": "Create a DO : LOOP"
+  },
+  "exb": {
+    "prefix": "exb",
+    "body": [
+      "%00000000"
+    ],
+    "description": "Snippet for 1 byte in binary"
+  },
+  "for n=n to n": {
+    "prefix": "for",
+    "body": [
+      "for ${1:0}=${2:0} to ${3:0}",
+      "\t$0",
+      "next $1"
+    ],
+    "description": "Create FOR NEXT"
+  },
+  "if n : endif": {
+    "prefix": "if",
+    "body": [
+      "if ${1:0}",
+      "\t$0",
+      "endif"
+    ],
+    "description": "if : endif"
+  },
+  "ink n": {
+    "prefix": "ink",
+    "body": [
+      "ink ${1:n}"
+    ],
+    "description": "Set INK n"
+  },
+  "inkey": {
+    "prefix": "inkey",
+    "body": [
+      "inkey"
+    ],
+    "description": "Returns keycode, use GetKeyScanCode() from keys.bas"
+  },
+  "nextreg reg,a or value": {
+    "prefix": "nextreg",
+    "body": [
+      "nextreg ${1:0},${2:0}"
+    ],
+    "description": "This needs to be in an asm block as direct inline asm. Can take either value or a"
+  },
+  "paper n": {
+    "prefix": "paper",
+    "body": [
+      "paper ${1:n}"
+    ],
+    "description": "Set PAPER n"
+  },
+  "pause nframes": {
+    "prefix": "pause",
+    "body": [
+      "pause ${1:0}"
+    ],
+    "description": "Pause n frames, please use WaitRaster(n) instead"
+  },
+  "peek(address)": {
+    "prefix": "peek",
+    "body": [
+      "peek(${1:address})"
+    ],
+    "description": "Peek byte from address"
+  },
+  "peek(uinteger,address)": {
+    "prefix": "peek",
+    "body": [
+      "peek(uinteger,${1:0})"
+    ],
+    "description": "Peek uinteger from address"
+  },
+  "read var/string...": {
+    "prefix": "read",
+    "body": [
+      "READ ${1:var}"
+    ],
+    "description": "READ var or string, use with RESTORE and DATA"
+  },
+  "restore label": {
+    "prefix": "restore",
+    "body": [
+      "RESTORE ${1:label}"
+    ],
+    "description": "RESTORE label containing DATA for use with READ"
+  },
+  "while n=n : wend": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition} ",
+      "\t$0",
+      "wend"
+    ],
+    "description": "Create a WHILE : WEND eg:\nWhile a < b\n  Let a = a + 1\n Poke a, 0\nEnd While"
+  },
+  "Generate ASM listing": {
+    "prefix": "!asm",
+    "body": [
+      "'!asm"
+    ],
+    "description": "Compiles the output to an ASM file"
+    },
+    "Add HDF Config": {
+      "prefix": "!nb",
+      "body": [
+        "'!nb=autostart(dir=/games,copy=/nextzxos/autoexec.bas,sync=all)"
+      ],
+      "description": "Adds HDF config to the NEX"
+    },
+  
+  "DrawImage(X, Y, @Image, frame, transparent)": {
+    "prefix": "DrawImage",
+    "body": [
+      "DrawImage(${1:x},${2:y},${3:Image},${4:frame})"
+    ],
+    "description": "Draw an image at x,y on Layer2 256x192.\n\n@Image is a pointer to the image data.\nframe is the frame to draw.\ntransparent is the transparent colour."
+  }
+}

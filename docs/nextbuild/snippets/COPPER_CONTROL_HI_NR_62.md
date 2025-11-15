@@ -1,0 +1,9 @@
+---
+name: COPPER_CONTROL_HI_NR_62
+prefix: COPPER_CONTROL_HI_NR_62
+description: COPPER_CONTROL_HI_NR_62      equ $62
+---
+
+```
+COPPER_CONTROL_HI_NR_62
+```

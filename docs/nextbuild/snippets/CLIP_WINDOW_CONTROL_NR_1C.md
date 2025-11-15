@@ -1,0 +1,9 @@
+---
+name: CLIP_WINDOW_CONTROL_NR_1C
+prefix: CLIP_WINDOW_CONTROL_NR_1C
+description: CLIP_WINDOW_CONTROL_NR_1C      equ $1C
+---
+
+```
+CLIP_WINDOW_CONTROL_NR_1C
+```

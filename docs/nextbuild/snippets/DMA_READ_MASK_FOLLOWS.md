@@ -1,0 +1,9 @@
+---
+name: DMA_READ_MASK_FOLLOWS
+prefix: DMA_READ_MASK_FOLLOWS
+description: DMA_READ_MASK_FOLLOWS      equ $BB
+---
+
+```
+DMA_READ_MASK_FOLLOWS
+```

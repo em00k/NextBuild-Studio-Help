@@ -1,0 +1,9 @@
+---
+name: TILEMAP_CONTROL_NR_6B
+prefix: TILEMAP_CONTROL_NR_6B
+description: TILEMAP_CONTROL_NR_6B      equ $6B
+---
+
+```
+TILEMAP_CONTROL_NR_6B
+```

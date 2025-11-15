@@ -1,0 +1,9 @@
+---
+name: EXPANSION_BUS_ENABLE_NR_80
+prefix: EXPANSION_BUS_ENABLE_NR_80
+description: EXPANSION_BUS_ENABLE_NR_80      equ $80
+---
+
+```
+EXPANSION_BUS_ENABLE_NR_80
+```

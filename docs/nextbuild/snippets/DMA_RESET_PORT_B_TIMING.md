@@ -1,0 +1,9 @@
+---
+name: DMA_RESET_PORT_B_TIMING
+prefix: DMA_RESET_PORT_B_TIMING
+description: DMA_RESET_PORT_B_TIMING      equ $CB
+---
+
+```
+DMA_RESET_PORT_B_TIMING
+```

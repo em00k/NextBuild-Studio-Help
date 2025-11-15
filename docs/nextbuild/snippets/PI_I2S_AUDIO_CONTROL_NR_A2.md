@@ -1,0 +1,9 @@
+---
+name: PI_I2S_AUDIO_CONTROL_NR_A2
+prefix: PI_I2S_AUDIO_CONTROL_NR_A2
+description: PI_I2S_AUDIO_CONTROL_NR_A2      equ $A2
+---
+
+```
+PI_I2S_AUDIO_CONTROL_NR_A2
+```

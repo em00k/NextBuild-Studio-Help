@@ -1,0 +1,9 @@
+---
+name: ZX128P3_MEMORY_P_1FFD
+prefix: ZX128P3_MEMORY_P_1FFD
+description: ZX128P3_MEMORY_P_1FFD      equ $1FFD
+---
+
+```
+ZX128P3_MEMORY_P_1FFD
+```

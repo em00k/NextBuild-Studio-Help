@@ -1,0 +1,9 @@
+---
+name: DAC_PROFI_COVOX_INDEX
+prefix: DAC_PROFI_COVOX_INDEX
+description: DAC_PROFI_COVOX_INDEX      equ 7
+---
+
+```
+DAC_PROFI_COVOX_INDEX
+```

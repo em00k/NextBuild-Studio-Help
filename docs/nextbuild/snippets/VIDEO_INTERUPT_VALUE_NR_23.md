@@ -1,0 +1,9 @@
+---
+name: VIDEO_INTERUPT_VALUE_NR_23
+prefix: VIDEO_INTERUPT_VALUE_NR_23
+description: VIDEO_INTERUPT_VALUE_NR_23      equ $23
+---
+
+```
+VIDEO_INTERUPT_VALUE_NR_23
+```

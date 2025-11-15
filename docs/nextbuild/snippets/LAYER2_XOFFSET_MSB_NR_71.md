@@ -1,0 +1,9 @@
+---
+name: LAYER2_XOFFSET_MSB_NR_71
+prefix: LAYER2_XOFFSET_MSB_NR_71
+description: LAYER2_XOFFSET_MSB_NR_71      equ $71
+---
+
+```
+LAYER2_XOFFSET_MSB_NR_71
+```

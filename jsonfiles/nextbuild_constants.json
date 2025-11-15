@@ -1,0 +1,717 @@
+{
+  "TRUE": {
+    "value": 1,
+    "description": "Boolean true value (often represented as 1 or -1 in BASICs)."
+  },
+  "FALSE": {
+    "value": 0,
+    "description": "Boolean false value."
+  },
+  "PI": {
+    "value": 3.1415926535,
+    "description": "Mathematical constant Pi."
+  },
+  "BLACK": {
+    "value": 0,
+    "description": "Color Black (palette index 0 in standard Next ULA/L2 palettes)"
+  },
+  "BLUE": {
+    "value": 1,
+    "description": "Color Blue"
+  },
+  "RED": {
+    "value": 2,
+    "description": "Color Red"
+  },
+  "MAGENTA": {
+    "value": 3,
+    "description": "Color Magenta"
+  },
+  "GREEN": {
+    "value": 4,
+    "description": "Color Green"
+  },
+  "CYAN": {
+    "value": 5,
+    "description": "Color Cyan"
+  },
+  "YELLOW": {
+    "value": 6,
+    "description": "Color Yellow"
+  },
+  "WHITE": {
+    "value": 7,
+    "description": "Color White (bright)"
+  },
+  "LAYER2_HEIGHT_192": {
+    "value": 192,
+    "description": "Layer 2 height in 256x192 mode."
+  },
+  "LAYER2_WIDTH_320": {
+    "value": 320,
+    "description": "Layer 2 width in 320x256 mode."
+  },
+  "LAYER2_HEIGHT_256": {
+    "value": 256,
+    "description": "Layer 2 height in 320x256 mode."
+  },
+  "INTEGER": {
+    "value": [
+      0,
+      65535
+    ],
+    "description": ""
+  },
+  "MODE256X192": {
+    "value": 0,
+    "description": "Constant for setting Layer 2 with InitLayer2({MODE})"
+  },
+  "MODE320X256": {
+    "value": 1,
+    "description": "Constant for setting Layer 2 with InitLayer2({MODE})"
+  },
+  "MODE640X256": {
+    "value": 2,
+    "description": "Constant for setting Layer 2 with InitLayer2({MODE})"
+  },
+  "ULA_PALETTE_P1": {
+    "value": 0,
+    "description": "Constant for ULA_PALETTE_P1 = %00000000 "
+  },
+  "L2_PALETTE_P1": {
+    "value": 16,
+    "description": "Constant for setting L2_PALETTE_P1 = %00010000"
+  },
+  "L2_PALETTE_P2": {
+    "value": 80,
+    "description": "Constant for setting L2_PALETTE_P2 = %01010000"
+  },
+  "SPR_PALETTE_P1": {
+    "value": 32,
+    "description": "Constant for setting SPR_PALETTE_P1 = %00100000"
+  },
+  "SPR_PALETTE_P2": {
+    "value": 96,
+    "description": "Constant for setting SPR_PALETTE_P2 = %01100000"
+  },
+  "TILE_PALETTE_P1": {
+    "value": 48,
+    "description": "Constant for setting TILE_PALETTE_P1 = %00110000"
+  },
+  "TILE_PALETTE_P2": {
+    "value": 112,
+    "description": "Constant for setting TILE_PALETTE_P2 = %01110000"
+  },
+  "BIT_UP": {
+    "value": 4,
+    "description": "Joystick Up %1000"
+  },
+  "BIT_DOWN": {
+    "value": 5,
+    "description": "Joystick Down %10000"
+  },
+  "BIT_LEFT": {
+    "value": 6,
+    "description": "Joystick Left %100000"
+  },
+  "DIR_NONE": {
+    "value": 0,
+    "description": "0"
+  },
+  "DIR_UP": {
+    "value": 16,
+    "description": "%00010000"
+  },
+  "DIR_DOWN": {
+    "value": 32,
+    "description": "%00100000"
+  },
+  "DIR_LEFT": {
+    "value": 64,
+    "description": "%01000000"
+  },
+  "DIR_RIGHT": {
+    "value": 128,
+    "description": "%10000000"
+  },
+  "KEMPSTON_JOY1_P_1F": {
+    "value": 31,
+    "description": "JOY1 Port 31"
+  },
+  "KEMPSTON_JOY2_P_37": {
+    "value": 55,
+    "description": "JOY1 Port $37"
+  },
+  "TBBLUE_REGISTER_SELECT_P_243B": {
+    "value": 9275,
+    "description": "TBBLUE PORT $243B"
+  },
+  "TBBLUE_REGISTER_ACCESS_P_253B": {
+    "value": 9531,
+    "description": "TBBLUE PORT $253B"
+  },
+  "LAYER2_ACCESS_P_123B": {
+    "value": 4667,
+    "description": "LAYER 2 Port $123B"
+  },
+  "MACHINE_ID_NR_00": {
+    "value": 0,
+    "description": "Identifies TBBlue board type. Should always be 10 (binary 0000 1010) on Next."
+  },
+  "NEXT_VERSION_NR_01": {
+    "value": 1,
+    "description": "Identifies core (FPGA image) version."
+  },
+  "NEXT_RESET_NR_02": {
+    "value": 2,
+    "description": "Identifies type of last reset. Can be written to force reset."
+  },
+  "MACHINE_TYPE_NR_03": {
+    "value": 3,
+    "description": "Identifies timing and machine type."
+  },
+  "ROM_MAPPING_NR_04": {
+    "value": 4,
+    "description": "In config mode, allows RAM to be mapped to ROM area."
+  },
+  "PERIPHERAL_1_NR_05": {
+    "value": 5,
+    "description": "Sets joystick mode, video frequency and Scandoubler."
+  },
+  "PERIPHERAL_2_NR_06": {
+    "value": 6,
+    "description": "Enables CPU Speed key, DivMMC, Multiface, Mouse and AY audio."
+  },
+  "TURBO_CONTROL_NR_07": {
+    "value": 7,
+    "description": "Sets CPU Speed, reads actual speed."
+  },
+  "PERIPHERAL_3_NR_08": {
+    "value": 8,
+    "description": "ABC/ACB Stereo, Internal Speaker, SpecDrum, Timex Video Modes, Turbo Sound Next, RAM contention and [un]lock 128k paging."
+  },
+  "PERIPHERAL_4_NR_09": {
+    "value": 9,
+    "description": "Sets scanlines, AY mono output, Sprite-id lockstep, reset DivMMC mapram and disable HDMI audio."
+  },
+  "PERIPHERAL_5_NR_0A": {
+    "value": 10,
+    "description": "Multiface type, Divmmc automap, Mouse buttons and DPI config."
+  },
+  "JOYSTICK_I_O_MODE_NR_0B": {
+    "value": 11,
+    "description": "Joystick port I/O control."
+  },
+  "NEXT_VERSION_MINOR_NR_0E": {
+    "value": 14,
+    "description": "Identifies core (FPGA image) version (sub minor number)."
+  },
+  "BOARD_ID_NR_0F": {
+    "value": 15,
+    "description": "Spectrum next issue ID."
+  },
+  "ANTI_BRICK_NR_10": {
+    "value": 16,
+    "description": "Used within the Anti-brick system."
+  },
+  "VIDEO_TIMING_NR_11": {
+    "value": 17,
+    "description": "Sets video output timing variant."
+  },
+  "LAYER2_RAM_BANK_NR_12": {
+    "value": 18,
+    "description": "Sets the bank number where Layer 2 video memory begins."
+  },
+  "LAYER2_RAM_SHADOW_BANK_NR_13": {
+    "value": 19,
+    "description": "Sets the bank number where the Layer 2 shadow screen begins."
+  },
+  "GLOBAL_TRANSPARENCY_NR_14": {
+    "value": 20,
+    "description": "Sets the \"transparent\" colour for Layer 2, ULA and LoRes pixel data."
+  },
+  "SPRITE_CONTROL_NR_15": {
+    "value": 21,
+    "description": "Enables/disables Sprites and Lores Layer, and chooses priority of sprites and Layer 2."
+  },
+  "LAYER2_XOFFSET_NR_16": {
+    "value": 22,
+    "description": "Sets the pixel offset used for drawing Layer 2 graphics on the screen."
+  },
+  "LAYER2_YOFFSET_NR_17": {
+    "value": 23,
+    "description": "Sets the Y offset used when drawing Layer 2 graphics on the screen."
+  },
+  "CLIP_LAYER2_NR_18": {
+    "value": 24,
+    "description": "Sets and reads clip-window for Layer 2."
+  },
+  "CLIP_SPRITE_NR_19": {
+    "value": 25,
+    "description": "Sets and reads clip-window for Sprites."
+  },
+  "CLIP_ULA_LORES_NR_1A": {
+    "value": 26,
+    "description": "Sets and reads clip-window for ULA/LoRes layer."
+  },
+  "CLIP_TILEMAP_NR_1B": {
+    "value": 27,
+    "description": "Sets and reads clip-window for Tilemap."
+  },
+  "CLIP_WINDOW_CONTROL_NR_1C": {
+    "value": 28,
+    "description": "Controls (resets) the clip-window registers indices."
+  },
+  "VIDEO_LINE_MSB_NR_1E": {
+    "value": 30,
+    "description": "Holds the MSB (only, as bit 0) of the raster line currently being drawn."
+  },
+  "VIDEO_LINE_LSB_NR_1F": {
+    "value": 31,
+    "description": "Holds the eight LSBs of the raster line currently being drawn."
+  },
+  "GENERATE_MASKABLE_INTERRUPT_NR_20": {
+    "value": 32,
+    "description": "Trigger interrupt."
+  },
+  "VIDEO_INTERUPT_CONTROL_NR_22": {
+    "value": 34,
+    "description": "Controls the timing of raster interrupts and the ULA frame interrupt."
+  },
+  "VIDEO_INTERUPT_VALUE_NR_23": {
+    "value": 35,
+    "description": "Holds the eight LSBs of the line on which a raster interrupt should occur."
+  },
+  "RESERVED_NR_24": {
+    "value": 36,
+    "description": "n/a."
+  },
+  "ULA_XOFFSET_NR_26": {
+    "value": 38,
+    "description": "Pixel X offset (0..255) to use when drawing ULA Layer."
+  },
+  "ULA_YOFFSET_NR_27": {
+    "value": 39,
+    "description": "Pixel Y offset (0..191) to use when drawing ULA Layer."
+  },
+  "HIGH_ADRESS_KEYMAP_NR_28": {
+    "value": 40,
+    "description": "PS/2 Keymap address MSB, read (pending) first byte of palette colour."
+  },
+  "LOW_ADRESS_KEYMAP_NR_29": {
+    "value": 41,
+    "description": "PS/2 Keymap address LSB."
+  },
+  "HIGH_DATA_TO_KEYMAP_NR_2A": {
+    "value": 42,
+    "description": "High data to PS/2 Keymap (MSB of data in bit 0)."
+  },
+  "LOW_DATA_TO_KEYMAP_NR_2B": {
+    "value": 43,
+    "description": "Low eight LSBs of PS/2 Keymap data."
+  },
+  "DAC_B_MIRROR_NR_2C": {
+    "value": 44,
+    "description": "DAC B mirror, read current I2S left MSB."
+  },
+  "DAC_AD_MIRROR_NR_2D": {
+    "value": 45,
+    "description": "SpecDrum port 0xDF / DAC A+D mirror, read current I2S LSB."
+  },
+  "DAC_C_MIRROR_NR_2E": {
+    "value": 46,
+    "description": "DAC C mirror, read current I2S right MSB."
+  },
+  "TILEMAP_XOFFSET_MSB_NR_2F": {
+    "value": 47,
+    "description": "Sets the pixel offset (two high bits) used for drawing Tilemap graphics on the screen."
+  },
+  "TILEMAP_XOFFSET_LSB_NR_30": {
+    "value": 48,
+    "description": "Sets the pixel offset (eight low bits) used for drawing Tilemap graphics on the screen."
+  },
+  "TILEMAP_YOFFSET_NR_31": {
+    "value": 49,
+    "description": "Sets the pixel offset used for drawing Tilemap graphics on the screen."
+  },
+  "LORES_XOFFSET_NR_32": {
+    "value": 50,
+    "description": "Pixel X offset (0..255) to use when drawing LoRes Layer."
+  },
+  "LORES_YOFFSET_NR_33": {
+    "value": 51,
+    "description": "Pixel Y offset (0..191) to use when drawing LoRes Layer."
+  },
+  "SPRITE_ATTR_SLOT_SEL_NR_34": {
+    "value": 52,
+    "description": "Selects sprite index 0..127 to be affected by writes to other Sprite ports (and mirrors)."
+  },
+  "SPRITE_ATTR0_NR_35": {
+    "value": 53,
+    "description": "Nextreg port-mirror to write directly into \"byte 1\" of Sprite Attribute Upload ($xx57 / 87)."
+  },
+  "SPRITE_ATTR1_NR_36": {
+    "value": 54,
+    "description": "Nextreg port-mirror to write directly into \"byte 2\" of Sprite Attribute Upload ($xx57 / 87)."
+  },
+  "SPRITE_ATTR2_NR_37": {
+    "value": 55,
+    "description": "Nextreg port-mirror to write directly into \"byte 3\" of Sprite Attribute Upload ($xx57 / 87)."
+  },
+  "SPRITE_ATTR3_NR_38": {
+    "value": 56,
+    "description": "Nextreg port-mirror to write directly into \"byte 4\" of Sprite Attribute Upload ($xx57 / 87)."
+  },
+  "SPRITE_ATTR4_NR_39": {
+    "value": 57,
+    "description": "Nextreg port-mirror to write directly into \"byte 5\" of Sprite Attribute Upload ($xx57 / 87)."
+  },
+  "PALETTE_INDEX_NR_40": {
+    "value": 64,
+    "description": "Chooses an palette element (index) to manipulate with."
+  },
+  "PALETTE_VALUE_NR_41": {
+    "value": 65,
+    "description": "Use to set/read 8-bit colours of the ULANext palette."
+  },
+  "PALETTE_FORMAT_NR_42": {
+    "value": 66,
+    "description": "Specifies mask to extract ink colour from attribute cell value in ULANext mode."
+  },
+  "PALETTE_CONTROL_NR_43": {
+    "value": 67,
+    "description": "Enables or disables Enhanced ULA interpretation of attribute values and toggles active palette."
+  },
+  "PALETTE_VALUE_9BIT_NR_44": {
+    "value": 68,
+    "description": "Use to set 9-bit (2-byte) colours of the Enhanced ULA palette, or to read second byte of colour."
+  },
+  "TRANSPARENCY_FALLBACK_COL_NR_4A": {
+    "value": 74,
+    "description": "8-bit colour to be used when all layers contain transparent pixel."
+  },
+  "SPRITE_TRANSPARENCY_I_NR_4B": {
+    "value": 75,
+    "description": "Index into sprite palette (of \"transparent\" colour)."
+  },
+  "TILEMAP_TRANSPARENCY_I_NR_4C": {
+    "value": 76,
+    "description": "Index into Tilemap palette (of \"transparent\" colour)."
+  },
+  "MMU0_0000_NR_50": {
+    "value": 80,
+    "description": "Selects the 8k-bank stored in 8k-slot 0 (see Memory map)."
+  },
+  "MMU1_2000_NR_51": {
+    "value": 81,
+    "description": "Selects the 8k-bank stored in 8k-slot 1 (see Memory map)."
+  },
+  "MMU2_4000_NR_52": {
+    "value": 82,
+    "description": "Selects the 8k-bank stored in 8k-slot 2 (see Memory map)."
+  },
+  "MMU3_6000_NR_53": {
+    "value": 83,
+    "description": "Selects the 8k-bank stored in 8k-slot 3 (see Memory map)."
+  },
+  "MMU4_8000_NR_54": {
+    "value": 84,
+    "description": "Selects the 8k-bank stored in 8k-slot 4 (see Memory map)."
+  },
+  "MMU5_A000_NR_55": {
+    "value": 85,
+    "description": "Selects the 8k-bank stored in 8k-slot 5 (see Memory map)."
+  },
+  "MMU6_C000_NR_56": {
+    "value": 86,
+    "description": "Selects the 8k-bank stored in 8k-slot 6 (see Memory map)."
+  },
+  "MMU7_E000_NR_57": {
+    "value": 87,
+    "description": "Selects the 8k-bank stored in 8k-slot 7 (see Memory map)."
+  },
+  "COPPER_DATA_NR_60": {
+    "value": 96,
+    "description": "Used to upload code to the Copper."
+  },
+  "COPPER_CONTROL_LO_NR_61": {
+    "value": 97,
+    "description": "Holds low byte of Copper control bits."
+  },
+  "COPPER_CONTROL_HI_NR_62": {
+    "value": 98,
+    "description": "Holds high byte of Copper control flags."
+  },
+  "COPPER_DATA_16B_NR_63": {
+    "value": 99,
+    "description": "Used to upload code to the Copper."
+  },
+  "VIDEO_LINE_OFFSET_NR_64": {
+    "value": 100,
+    "description": "Offset numbering of raster lines in copper/interrupt/active register."
+  },
+  "ULA_CONTROL_NR_68": {
+    "value": 104,
+    "description": "Disable ULA, controls ULA mixing/blending, enable ULA+."
+  },
+  "DISPLAY_CONTROL_NR_69": {
+    "value": 105,
+    "description": "Layer2, ULA shadow, Timex $FF port."
+  },
+  "LORES_CONTROL_NR_6A": {
+    "value": 106,
+    "description": "LoRes Radastan mode."
+  },
+  "TILEMAP_CONTROL_NR_6B": {
+    "value": 107,
+    "description": "Controls Tilemap mode."
+  },
+  "TILEMAP_DEFAULT_ATTR_NR_6C": {
+    "value": 108,
+    "description": "Default tile attribute for 8-bit only maps."
+  },
+  "TILEMAP_BASE_ADR_NR_6E": {
+    "value": 110,
+    "description": "Base address of the 40x32 or 80x32 tile map (similar to text-mode of other computers)."
+  },
+  "TILEMAP_GFX_ADR_NR_6F": {
+    "value": 111,
+    "description": "Base address of the tiles' graphics."
+  },
+  "LAYER2_CONTROL_NR_70": {
+    "value": 112,
+    "description": "Layer 2 resolution, palette offset."
+  },
+  "LAYER2_XOFFSET_MSB_NR_71": {
+    "value": 113,
+    "description": "Sets the pixel offset used for drawing Layer 2 graphics on the screen."
+  },
+  "SPRITE_ATTR0_INC_NR_75": {
+    "value": 117,
+    "description": "Same as Sprite port-mirror Attribute 0 Register ($35) (write first byte of sprite-attributes), plus increments Sprite port-mirror Index Register ($34)."
+  },
+  "SPRITE_ATTR1_INC_NR_76": {
+    "value": 118,
+    "description": "Same as Sprite port-mirror Attribute 1 Register ($36) (write second byte of sprite-attributes), plus increments Sprite port-mirror Index Register ($34)."
+  },
+  "SPRITE_ATTR2_INC_NR_77": {
+    "value": 119,
+    "description": "Same as Sprite port-mirror Attribute 2 Register ($37) (write third byte of sprite-attributes), plus increments Sprite port-mirror Index Register ($34)."
+  },
+  "SPRITE_ATTR3_INC_NR_78": {
+    "value": 120,
+    "description": "Same as Sprite port-mirror Attribute 3 Register ($38) (write fourth byte of sprite-attributes), plus increments Sprite port-mirror Index Register ($34)."
+  },
+  "SPRITE_ATTR4_INC_NR_79": {
+    "value": 121,
+    "description": "Same as Sprite port-mirror Attribute 4 Register ($39) (write fifth byte of sprite-attributes), plus increments Sprite port-mirror Index Register ($34)."
+  },
+  "USER_STORAGE_0_NR_7F": {
+    "value": 127,
+    "description": "8-bit storage for user."
+  },
+  "EXPANSION_BUS_ENABLE_REGISTER_NR_80": {
+    "value": 128,
+    "description": "Expansion bus enable/config."
+  },
+  "EXPANSION_BUS_CONTROL_NR_81": {
+    "value": 129,
+    "description": "Expansion bus controls."
+  },
+  "INTERNAL_PORT_DECODING_0_NR_82": {
+    "value": 130,
+    "description": "Enabling internal ports decoding."
+  },
+  "INTERNAL_PORT_DECODING_1_NR_83": {
+    "value": 131,
+    "description": "Enabling internal ports decoding."
+  },
+  "INTERNAL_PORT_DECODING_2_NR_84": {
+    "value": 132,
+    "description": "Enabling internal ports decoding."
+  },
+  "INTERNAL_PORT_DECODING_3_NR_85": {
+    "value": 133,
+    "description": "Enabling internal ports decoding."
+  },
+  "EXPANSION_BUS_DECODING_0_NR_86": {
+    "value": 134,
+    "description": "When expansion bus is enabled: Internal ports decoding mask."
+  },
+  "EXPANSION_BUS_DECODING_1_NR_87": {
+    "value": 135,
+    "description": "When expansion bus is enabled: Internal ports decoding mask."
+  },
+  "EXPANSION_BUS_DECODING_2_NR_88": {
+    "value": 136,
+    "description": "When expansion bus is enabled: Internal ports decoding mask."
+  },
+  "EXPANSION_BUS_DECODING_3_NR_89": {
+    "value": 137,
+    "description": "When expansion bus is enabled: Internal ports decoding mask."
+  },
+  "EXPANSION_BUS_PROPAGATE_NR_8A": {
+    "value": 138,
+    "description": "Monitoring internal I/O or adding external keyboard."
+  },
+  "ALTERNATE_ROM_NR_8C": {
+    "value": 140,
+    "description": "Enable alternate ROM or lock 48k ROM."
+  },
+  "ZX_MEM_MAPPING_NR_8E": {
+    "value": 142,
+    "description": "Control classic 128K Spectrum memory mapping."
+  },
+  "MEMORY_MAPPING_MODE_REGISTER_NR_8F": {
+    "value": 143,
+    "description": "Select memory mapping mode."
+  },
+  "PI_GPIO_OUT_ENABLE_0_NR_90": {
+    "value": 144,
+    "description": "Enables GPIO pins output."
+  },
+  "PI_GPIO_0_NR_98": {
+    "value": 152,
+    "description": "GPIO pins mapped to Next Register."
+  },
+  "PI_PERIPHERALS_ENABLE_NR_A0": {
+    "value": 160,
+    "description": "Enable Pi peripherals: UART, Pi hats, I2C, SPI."
+  },
+  "PI_I2S_AUDIO_CONTROL_NR_A2": {
+    "value": 162,
+    "description": "Pi I2S controls."
+  },
+  "PI_I2S_CLOCK_DIVIDE_REGISTER_NR_A3": {
+    "value": 163,
+    "description": "Pi I2S clock divide in master mode."
+  },
+  "ESP_WIFI_GPIO_OUTPUT_NR_A8": {
+    "value": 168,
+    "description": "ESP WiFi GPIO Output."
+  },
+  "ESP_WIFI_GPIO_NR_A9": {
+    "value": 169,
+    "description": "ESP WiFi GPIO Read/Write."
+  },
+  "EXTENDED_KEYS_0_NR_B0": {
+    "value": 176,
+    "description": "Read Next keyboard compound keys separately."
+  },
+  "EXTENDED_KEYS_1_NR_B1": {
+    "value": 177,
+    "description": "Read Next keyboard compound keys separately."
+  },
+  "DIVMMC_TRAP_ENABLE_1_REGISTER_NR_B2": {
+    "value": 178,
+    "description": "DivMMC trap configuration."
+  },
+  "EXTENDED_MD_PAD_BUTTONS_NR_B2": {
+    "value": 178,
+    "description": "Reading additional buttons on MD pads."
+  },
+  "DIVMMC_TRAP_ENABLE_2_REGISTER_NR_B4": {
+    "value": 180,
+    "description": "DivMMC trap configuration."
+  },
+  "DIVMMC_ENTRY_POINTS_0_NR_B8": {
+    "value": 184,
+    "description": "DivMMC automap control."
+  },
+  "DIVMMC_ENTRY_POINTS_VALID_0_NR_B9": {
+    "value": 185,
+    "description": "DivMMC entry point validity."
+  },
+  "DIVMMC_ENTRY_POINTS_TIMING_0_NR_BA": {
+    "value": 186,
+    "description": "Adjust delay of divmmc mapping."
+  },
+  "DIVMMC_ENTRY_POINTS_1_NR_BB": {
+    "value": 187,
+    "description": "DivMMC automap control."
+  },
+  "INTERRUPT_CONTROL_NR_C0": {
+    "value": 192,
+    "description": "Interrupt control configuration."
+  },
+  "NMI_RETURN_ADDRESS_LSB_REGISTER_NR_C2": {
+    "value": 194,
+    "description": "LSB of NMI return address."
+  },
+  "NMI_RETURN_ADDRESS_MSB_REGISTER_NR_C3": {
+    "value": 195,
+    "description": "MSB of NMI return address."
+  },
+  "INTERRUPT_ENABLE_0_REGISTER_NR_C4": {
+    "value": 196,
+    "description": "Interrupt type enable control."
+  },
+  "INTERRUPT_ENABLE_1_REGISTER_NR_C5": {
+    "value": 197,
+    "description": "ctc interrupt enable control."
+  },
+  "INTERRUPT_ENABLE_2_REGISTER_NR_C6": {
+    "value": 198,
+    "description": "UART interrupt enable control."
+  },
+  "INTERRUPT_STATUS_0_REGISTER_NR_C8": {
+    "value": 200,
+    "description": "Has interrupt occurred?."
+  },
+  "INTERRUPT_STATUS_1_REGISTER_NR_C9": {
+    "value": 201,
+    "description": "Has ctc interrupt occurred?."
+  },
+  "INTERRUPT_STATUS_2_REGISTER_NR_CA": {
+    "value": 202,
+    "description": "Has UART interrupt happened?."
+  },
+  "DMA_INTERRUPT_ENABLE_0_NR_CC": {
+    "value": 204,
+    "description": "Interrupts that can override DMA."
+  },
+  "DMA_INTERRUPT_ENABLE_1_NR_CD": {
+    "value": 205,
+    "description": "CTC Interrupts that can override DMA."
+  },
+  "DMA_INTERRUPT_ENABLE_2_NR_CE": {
+    "value": 206,
+    "description": "UART Interrupts that can override DMA."
+  },
+  "I_O_TRAPS_REGISTER_NR_D8": {
+    "value": 216,
+    "description": "experimental."
+  },
+  "I_O_TRAP_WRITE_REGISTER_NR_D9": {
+    "value": 217,
+    "description": "experimental."
+  },
+  "I_O_TRAP_CAUSE_REGISTER_NR_DA": {
+    "value": 218,
+    "description": "experimental."
+  },
+  "XDEV_COMMAND_REGISTER_NR_F0": {
+    "value": 240,
+    "description": "Issue 4 only."
+  },
+  "XADC_REGISTER_NR_F8": {
+    "value": 248,
+    "description": "Issue 4 only."
+  },
+  "XADC_D0_REGISTER_NR_F9": {
+    "value": 249,
+    "description": "Issue 4 only."
+  },
+  "XADC_D1_REGISTER_NR_FA": {
+    "value": 250,
+    "description": "Issue 4 only."
+  },
+  "DEBUG_LED_CONTROL_NR_FF": {
+    "value": 255,
+    "description": "Turns debug LEDs on and off on TBBlue implementations that have them."
+  },
+  "ULA_PALETTE_P2": {
+    "value": 64,
+    "description": "Constant for ULA_PALETTE_P1 = %01000000"
+  }
+}

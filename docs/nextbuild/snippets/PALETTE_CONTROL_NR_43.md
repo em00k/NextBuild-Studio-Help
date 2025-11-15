@@ -1,0 +1,9 @@
+---
+name: PALETTE_CONTROL_NR_43
+prefix: PALETTE_CONTROL_NR_43
+description: PALETTE_CONTROL_NR_43      equ $43
+---
+
+```
+PALETTE_CONTROL_NR_43
+```

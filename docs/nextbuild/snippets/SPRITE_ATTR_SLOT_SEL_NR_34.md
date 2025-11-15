@@ -1,0 +1,9 @@
+---
+name: SPRITE_ATTR_SLOT_SEL_NR_34
+prefix: SPRITE_ATTR_SLOT_SEL_NR_34
+description: SPRITE_ATTR_SLOT_SEL_NR_34      equ $34
+---
+
+```
+SPRITE_ATTR_SLOT_SEL_NR_34
+```

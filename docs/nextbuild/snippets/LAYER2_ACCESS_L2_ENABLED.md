@@ -1,0 +1,9 @@
+---
+name: LAYER2_ACCESS_L2_ENABLED
+prefix: LAYER2_ACCESS_L2_ENABLED
+description: LAYER2_ACCESS_L2_ENABLED      equ $02
+---
+
+```
+LAYER2_ACCESS_L2_ENABLED
+```

@@ -1,0 +1,9 @@
+---
+name: NEXT_VERSION_MINOR_NR_0E
+prefix: NEXT_VERSION_MINOR_NR_0E
+description: NEXT_VERSION_MINOR_NR_0E      equ $0E
+---
+
+```
+NEXT_VERSION_MINOR_NR_0E
+```

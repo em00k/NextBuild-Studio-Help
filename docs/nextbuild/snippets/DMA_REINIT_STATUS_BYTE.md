@@ -1,0 +1,9 @@
+---
+name: DMA_REINIT_STATUS_BYTE
+prefix: DMA_REINIT_STATUS_BYTE
+description: DMA_REINIT_STATUS_BYTE      equ $8B
+---
+
+```
+DMA_REINIT_STATUS_BYTE
+```

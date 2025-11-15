@@ -1,0 +1,9 @@
+---
+name: DMA_ENABLE_INTERUPTS
+prefix: DMA_ENABLE_INTERUPTS
+description: DMA_ENABLE_INTERUPTS      equ $AB
+---
+
+```
+DMA_ENABLE_INTERUPTS
+```

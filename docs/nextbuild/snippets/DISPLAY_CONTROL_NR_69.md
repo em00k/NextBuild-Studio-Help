@@ -1,0 +1,9 @@
+---
+name: DISPLAY_CONTROL_NR_69
+prefix: DISPLAY_CONTROL_NR_69
+description: DISPLAY_CONTROL_NR_69      equ $69
+---
+
+```
+DISPLAY_CONTROL_NR_69
+```

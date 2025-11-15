@@ -1,0 +1,9 @@
+---
+name: ESP_WIFI_GPIO_OUTPUT_NR_A8
+prefix: ESP_WIFI_GPIO_OUTPUT_NR_A8
+description: ESP_WIFI_GPIO_OUTPUT_NR_A8      equ $A8
+---
+
+```
+ESP_WIFI_GPIO_OUTPUT_NR_A8
+```

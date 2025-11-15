@@ -1,0 +1,9 @@
+---
+name: HIGH_DATA_TO_KEYMAP_NR_2A
+prefix: HIGH_DATA_TO_KEYMAP_NR_2A
+description: HIGH_DATA_TO_KEYMAP_NR_2A      equ $2A
+---
+
+```
+HIGH_DATA_TO_KEYMAP_NR_2A
+```

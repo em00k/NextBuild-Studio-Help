@@ -1,0 +1,9 @@
+---
+name: TILEMAP_DEFAULT_ATTR_NR_6C
+prefix: TILEMAP_DEFAULT_ATTR_NR_6C
+description: TILEMAP_DEFAULT_ATTR_NR_6C      equ $6C
+---
+
+```
+TILEMAP_DEFAULT_ATTR_NR_6C
+```

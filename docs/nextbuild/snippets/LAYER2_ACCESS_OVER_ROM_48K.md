@@ -1,0 +1,9 @@
+---
+name: LAYER2_ACCESS_OVER_ROM_48K
+prefix: LAYER2_ACCESS_OVER_ROM_48K
+description: LAYER2_ACCESS_OVER_ROM_48K      equ $C0
+---
+
+```
+LAYER2_ACCESS_OVER_ROM_48K
+```

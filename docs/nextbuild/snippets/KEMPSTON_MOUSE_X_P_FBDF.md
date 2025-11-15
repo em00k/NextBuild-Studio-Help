@@ -1,0 +1,9 @@
+---
+name: KEMPSTON_MOUSE_X_P_FBDF
+prefix: KEMPSTON_MOUSE_X_P_FBDF
+description: KEMPSTON_MOUSE_X_P_FBDF      equ $FBDF
+---
+
+```
+KEMPSTON_MOUSE_X_P_FBDF
+```

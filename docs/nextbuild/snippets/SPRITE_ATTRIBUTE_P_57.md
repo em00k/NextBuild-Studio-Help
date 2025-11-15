@@ -1,0 +1,9 @@
+---
+name: SPRITE_ATTRIBUTE_P_57
+prefix: SPRITE_ATTRIBUTE_P_57
+description: SPRITE_ATTRIBUTE_P_57      equ $57
+---
+
+```
+SPRITE_ATTRIBUTE_P_57
+```
