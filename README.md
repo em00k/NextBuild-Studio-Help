@@ -11,11 +11,8 @@ Run the menu script:
 
 Then select from the available options: 
 - 1) Keywords Editor (jsonfiles/keywords.json)
-    - This is what will appear in the F1 help system. 
 - 2) Constants Editor (jsonfiles/nextbuild_constants.json)
-    - These are what appear when you hover over a keyword in the editor.
 - 3) Snippets Editor (jsonfiles/nextbuild_snippets.json)
-    - These expand when you start typing a keyword in the editor.
 - 4) Copy to Live (copy_to_live.sh)
 
 
@@ -24,14 +21,15 @@ Then select from the available options:
 The copy to live script copies the jsonfiles to the live directory. This is used to test the editors in the live environment in a Virtual Machine.
 
 The jsonfiles folder contains all three json files that are used by the NextBuild Studio extension.
+
 - jsonfiles/keywords.json
-    - This file contains the keywords that are used by the NextBuild Studio extension.
+    - This is what will appear in the F1 help system, when you haev the cursor over a keyword and press F1.
     - ![Keywords Editor](docs/keywords.png)
 - jsonfiles/nextbuild_constants.json
-    - This file contains the constants that are used by the NextBuild Studio extension.
+    - This is what will appear when you hover over a keyword in the editor. 
     - ![Constants Editor](docs/constants.png)
 - jsonfiles/nextbuild_snippets.json
-    - This file contains the snippets that are used by the NextBuild Studio extension.
+    - These expand when you start typing a keyword in the editor.
     - ![Snippets Editor](docs/snippets.png)
 
 The copy to live script copies these files to the live directory.
