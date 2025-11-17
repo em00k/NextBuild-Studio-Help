@@ -709,7 +709,7 @@
   "#include <nextlib.bas>": {
     "prefix": "#include",
     "body": [
-      "#include ${1|<nextlib.bas>,<keys.bas>,<memcopy.bas>,<string.bas>,<print42.bas>,<print64.bas>,<printfzx.bas>,<megalz.bas>|}",
+      "#include ${1|<nextlib.bas>,<nextlib_ints.bas>,<nextlib_ints_ctc2.bas>,<hex.bas>,<asc.bas>,<keys.bas>,<memcopy.bas>,<string.bas>,<print42.bas>,<print64.bas>,<printfzx.bas>,<megalz.bas>|}",
       "$0"
     ],
     "description": "Include the nextlib or other zxb lib, make sure this is after any #DEFINEs for NEX, DEBUG, IM2"
@@ -847,15 +847,14 @@
       "'!asm"
     ],
     "description": "Compiles the output to an ASM file"
-    },
-    "Add HDF Config": {
-      "prefix": "!nb",
-      "body": [
-        "'!nb=autostart(dir=/games,copy=/nextzxos/autoexec.bas,sync=all)"
-      ],
-      "description": "Adds HDF config to the NEX"
-    },
-  
+  },
+  "Add HDF Config": {
+    "prefix": "!nb",
+    "body": [
+      "'!nb=autostart(dir=/games,copy=/nextzxos/autoexec.bas,sync=all)"
+    ],
+    "description": "Adds HDF config to the NEX"
+  },
   "DrawImage(X, Y, @Image, frame, transparent)": {
     "prefix": "DrawImage",
     "body": [
