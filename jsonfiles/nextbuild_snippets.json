@@ -46,7 +46,7 @@
   "CLS256(colour)": {
     "prefix": "CLS256",
     "body": [
-      "CLS256(${1:n})"
+      "CLS256(${1:colour})"
     ],
     "description": "Clear Layer 2 with n colour"
   },
@@ -89,7 +89,7 @@
     "prefix": "cmt",
     "body": [
       "'----------------------------------------------------------",
-      "' ${1:comment}",
+      "' //MARK : ${1:comment}",
       "'",
       "$2"
     ],
@@ -108,20 +108,6 @@
       "'!copy=d:/test/file.nex"
     ],
     "description": "Copies the final NEX to a location"
-  },
-  "DATA a,b,c....": {
-    "prefix": "DATA",
-    "body": [
-      "DATA ${1:n}"
-    ],
-    "description": "DATA statement : eg DATA 1,2,3,4,5,\"HELLO\""
-  },
-  "Dim var AS type AT ": {
-    "prefix": "Dim",
-    "body": [
-      "dim ${1:name} as ${2|ubyte,uinteger,float,fixed,ulong,string|}"
-    ],
-    "description": "Defines a global variable of type"
   },
   "DisableMusic": {
     "prefix": "DisableMusic",
@@ -221,7 +207,7 @@
     "body": [
       "FPlotL2(${1:y},${2:x},${3:colour})"
     ],
-    "description": "Plot pixel on L2 320x256 with colour"
+    "description": "Plot pixel on L2 320x256 with a colour"
   },
   "FreeBank(bank)": {
     "prefix": "FreeBank",
@@ -253,13 +239,6 @@
     ],
     "description": "IF...THEN...END IF block"
   },
-  "INTEGER": {
-    "prefix": "INTEGER",
-    "body": [
-      "INTEGER"
-    ],
-    "description": "INTEGER is signed -32767 - +32767, 2bytes"
-  },
   "InitLayer2(SCREENMODE)": {
     "prefix": "InitLayer2",
     "body": [
@@ -277,7 +256,7 @@
   "InitPalette(pallete_sel[, bank, start index, number of colours, offset in bank])": {
     "prefix": "InitPalette",
     "body": [
-      "InitPalette(${1|ULA_PALETTE_P1,ULA_PALETTE_P2,L2_PALETTE_P1,L2_PALETTE_P2,SPR_PALETTE_P1,SPR_PALETTE_P2,TILE_PALETTE_P1,TILE_PALETTE_P2|},${2:0},${3:0},${4:0},${5:0})"
+      "InitPalette(${1|ULA_PALETTE_P1,ULA_PALETTE_P2,L2_PALETTE_P1,L2_PALETTE_P2,SPR_PALETTE_P1,SPR_PALETTE_P2,TILE_PALETTE_P1,TILE_PALETTE_P2|},${2:bank},${3:start},${4:count},${5:offset})"
     ],
     "description": "Uploads a palette to the selected palette system see [InitPalette](initpalette.md). You can this command with only the first parameter set, the rest will be set to 0 (default)."
   },
@@ -287,13 +266,6 @@
       "InitSFX(${1:bank})"
     ],
     "description": "Initialise AYFX afb data in bank"
-  },
-  "InitSprites2(nr of sprites,address,sprite bank)": {
-    "prefix": "InitSprites2",
-    "body": [
-      "InitSprites2(${1:nr},${2:address},${3:bank})"
-    ],
-    "description": "Upload nr sprites from address, 8 or 4 bit supported from a specified bank"
   },
   "InitSprites(nr of sprites,address)": {
     "prefix": "InitSprites",
@@ -438,23 +410,16 @@
   "Poke Uinteger address,value": {
     "prefix": "Poke UINTERGER",
     "body": [
-      "poke Uinteger ${1:0},${2:0}"
+      "Poke Uinteger ${1:address},${2:value}"
     ],
-    "description": "POKE UINT to address"
+    "description": "Pokes a 2byte value to the specified address"
   },
   "Poke address,value": {
     "prefix": "Poke",
     "body": [
-      "Poke ${1:0},${2:0}"
+      "Poke ${1:address},${2:value}"
     ],
-    "description": "POKE byte to address"
-  },
-  "Print AT Y,X": {
-    "prefix": "print",
-    "body": [
-      "print"
-    ],
-    "description": "PRINT str$\n\nPrint at y,x;"
+    "description": "POKE a byte to address"
   },
   "Rem comment": {
     "prefix": "Rem",
@@ -586,20 +551,6 @@
     ],
     "description": "Does a software L2 256x192 tilemap. address = mapdata, offset = block to start counting from, nrtiles = how many tiles to draw, x/y = x/y position to top left corner of tilemap, width = width of tilemap on scree, worldwidth = nr of tiles x in world"
   },
-  "UBYTE": {
-    "prefix": "BYTE",
-    "body": [
-      "UBYTE"
-    ],
-    "description": "UBYTE is signed -127 - +127, 1bytes"
-  },
-  "UINTEGER": {
-    "prefix": "UINTEGER",
-    "body": [
-      "UINTEGER"
-    ],
-    "description": "UINTEGER is unsigned 0 - 65535, 2bytes"
-  },
   "UpdateSprite(uint x,y,id,image,attr3,attr4)": {
     "prefix": "UpdateSprite",
     "body": [
@@ -636,7 +587,7 @@
     "description": "Wait number of frames "
   },
   "'!asm": {
-    "prefix": "'!",
+    "prefix": "'!asm",
     "body": [
       "'!asm"
     ],
@@ -671,7 +622,7 @@
     "description": "Do not launch emulator after compilation"
   },
   "'!opt=optimisation value": {
-    "prefix": "'!",
+    "prefix": "'!opt",
     "body": [
       "'!opt=${1|0|1|2|3|4|}"
     ],
@@ -720,20 +671,6 @@
       "border ${1:n}"
     ],
     "description": "Set BORDER n"
-  },
-  "cast(ubyte,value)": {
-    "prefix": "cast",
-    "body": [
-      "cast(ubyte,${1:0})"
-    ],
-    "description": "Cast value as ubyte"
-  },
-  "cast(uinteger,value)": {
-    "prefix": "cast",
-    "body": [
-      "cast(uinteger,${1:0})"
-    ],
-    "description": "Cast value as uinteger"
   },
   "do : loop until n=n": {
     "prefix": "do",
@@ -832,15 +769,6 @@
     ],
     "description": "RESTORE label containing DATA for use with READ"
   },
-  "while n=n : wend": {
-    "prefix": "while",
-    "body": [
-      "while ${1:condition} ",
-      "\t$0",
-      "wend"
-    ],
-    "description": "Create a WHILE : WEND eg:\nWhile a < b\n  Let a = a + 1\n Poke a, 0\nEnd While"
-  },
   "Generate ASM listing": {
     "prefix": "!asm",
     "body": [
@@ -861,5 +789,105 @@
       "DrawImage(${1:x},${2:y},${3:Image},${4:frame})"
     ],
     "description": "Draw an image at x,y on Layer2 256x192.\n\n@Image is a pointer to the image data.\nframe is the frame to draw.\ntransparent is the transparent colour."
+  },
+  "Console(string)": {
+    "prefix": "Console",
+    "body": [
+      "Console($0)"
+    ],
+    "description": "Sends a string to CSpect stdout"
+  },
+  "InitSprites2(nr of sprites,address,sprite bank, [start slot])": {
+    "prefix": "InitSprites2",
+    "body": [
+      "InitSprites2(${1:nr},${2:address},${3:bank},${4:startslot})"
+    ],
+    "description": "Upload nr sprites from address, 8 or 4 bit supported from a specified bank starting at an optional sprite start slot."
+  },
+  "PlaySFX(soundfx)": {
+    "prefix": "PlaySFX",
+    "body": [
+      "PlaySFX(${1:soundfx})"
+    ],
+    "description": "Plays an AY sound effect for use with InitMusic() and interrupt library"
+  },
+  "cast(TYPE,var)": {
+    "prefix": "cast",
+    "body": [
+      "cast(${1|ubyte,uinteger,ulong,byte,integer,fixed,float|}, ${2:var})"
+    ],
+    "description": "Cast value as a type"
+  },
+  "Print At Y,X;": {
+    "prefix": "Print",
+    "body": [
+      "Print"
+    ],
+    "description": "Print str$\n\nPrint at y,x;"
+  },
+  "Data a,b,c....": {
+    "prefix": "Data",
+    "body": [
+      "Data ${1:n}"
+    ],
+    "description": "DATA statement : eg DATA 1,2,3,4,5,\"HELLO\""
+  },
+  "While n=n : wend": {
+    "prefix": "While",
+    "body": [
+      "while ${1:condition} ",
+      "\t$0",
+      "wend"
+    ],
+    "description": "Create a WHILE : WEND eg:\nWhile a < b\n  Let a = a + 1\n Poke a, 0\nEnd While"
+  },
+  "Integer": {
+    "prefix": "Integer",
+    "body": [
+      "Integer"
+    ],
+    "description": "INTEGER is signed -32767 - +32767, 2bytes"
+  },
+  "dim var AS type AT": {
+    "prefix": "dim",
+    "body": [
+      "dim ${1:name} as ${2|ubyte,uinteger,float,fixed,ulong,string|}"
+    ],
+    "description": "Defines a global variable of type"
+  },
+  "ClearLayer2(colour)": {
+    "prefix": "ClearLayer2",
+    "body": [
+      "ClearLayer2(${1|colour|})"
+    ],
+    "description": "Clears Layer 2 with specified index colour. Set up with InitLayer2()."
+  },
+  "uinteger": {
+    "prefix": "uinteger",
+    "body": [
+      "uinteger"
+    ],
+    "description": "Uinteger is non signed value 0 to 65535, 2bytes"
+  },
+  "ubyte": {
+    "prefix": "ubyte",
+    "body": [
+      "ubyte"
+    ],
+    "description": "UBYTE is signed 0 to 255, 1bytes"
+  },
+  "CopyToBanks": {
+    "prefix": "CopyToBanks",
+    "body": [
+      "CopyToBanks(${1:start bank}, ${2:dest bank}, ${3:bank count}, ${4:length}, ${5:start addr}, ${6:dest addr))"
+    ],
+    "description": "CopyToBanks(startb as ubyte, destb as ubyte, nrbanks as ubyte, copylen as uinteger=$2000, copystart as uinteger=$0, copydest as uinteger=$2000)"
+  },
+  "CopyToBanks Short": {
+    "prefix": "CopyToBanks",
+    "body": [
+      "CopyToBanks(${1:start bank}, ${2:dest bank}, ${3:bank count})"
+    ],
+    "description": "CopyToBanks(startb as ubyte, destb as ubyte, nrbanks as ubyte)"
   }
 }

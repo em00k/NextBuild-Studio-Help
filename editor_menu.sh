@@ -2,6 +2,11 @@
 # NextBuild Editor Menu
 # A menu-driven launcher for NextBuild editors
 
+# Ensure X11 display access for GUI apps
+if [ -n "$DISPLAY" ]; then
+    xhost +local: > /dev/null 2>&1
+fi
+
 source venv/bin/activate
 
 # Function to display the menu
@@ -27,11 +32,8 @@ run_keywords_editor() {
     echo "Launching Keywords Editor..."
     echo "=========================="
 
-
-    # Launch the editor
-    cd scripts
-    python3 keywords_editor.py ../jsonfiles/keywords.json
-    cd ..
+    # Launch the lite editor (no external dependencies)
+    python3 scripts/keywords_editor_lite.py jsonfiles/keywords.json
     echo "Keywords Editor closed."
 }
 
@@ -66,7 +68,7 @@ copy_to_live() {
     echo ""
     echo "Copying to live..."
     echo "=================="
-    ./copy_to_live.sh
+    scripts/copy_to_live.sh
     echo "Copy to live closed."
 }
 

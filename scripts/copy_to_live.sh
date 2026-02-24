@@ -1,12 +1,21 @@
 #!/bin/bash
 
-DESTINATION_DIR="/home/user/Applications/NextBuildStudio/resources/app/extensions/em00k.nextbuild-viewers"
+set -e
 
-# Copy the jsonfiles to the live directory
-cp -r ../jsonfiles/keywords.json $DESTINATION_DIR/data/
-cp -r ../jsonfiles/nextbuild_constants.json $DESTINATION_DIR/data/
-cp -r ../jsonfiles/nextbuild_snippets.json $DESTINATION_DIR/snippets/nextbuild.json
+paths=(
+	"/home/usb/Applications/NextBuildStudio/resources/app/extensions/em00k.nextbuild-viewers/"
+	"/home/usb/.nextbuild-studio/extensions/em00k.nextbuild-viewers-0.9.52/"
+	"/home/usb/Documents/GitHub/nextbuild-viewers-linux/"
+	)
 
-# cp -r ../jsonfiles/keywords.json $DESTINATION_DIR/data/
-# cp -r ../jsonfiles/nextbuild_constants.json $DESTINATION_DIR/data/
-# cp -r ../jsonfiles/nextbuild_snippets.json $DESTINATION_DIR/snippets/
+
+for f in "${paths[@]}"; do 
+		
+	# Copy the jsonfiles to the live directory
+	cp -r jsonfiles/keywords.json $f/data/
+	cp -r jsonfiles/nextbuild_constants.json $f/data/
+	cp -r jsonfiles/nextbuild_snippets.json $f/snippets/
+done 
+
+	
+
